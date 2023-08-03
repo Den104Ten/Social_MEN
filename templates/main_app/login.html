@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkInput() {
+      var input_username = document.getElementById('myInputUsername');
+      var input_password = document.getElementById('myInputPassword')
+      var button = document.getElementById('myButton');
+
+      if (input_username.value.length > 0 && input_password.value.length > 0) {
+        button.disabled = false;
+      } else {
+        button.disabled = true;
+      }
+    }
+  </script>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="username" id="myInputUsername" onkeyup="checkInput()" placeholder="Имя пользователя">
+  <input type="password" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Пароль">
+  <button type="submit" id="myButton" disabled>Войти</button>
+</form>
+
+<div class="lol">
+  {{ universal_text_login }}
+</div>
+
+</body>
+</html>

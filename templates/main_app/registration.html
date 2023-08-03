@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}  <!-- Везде подключай эту хуйню -->
+<head>
+    <!-- Пример как подключать статические файлы, это css, img, js и другие -->
+    <link rel="stylesheet" type="text/css" href="{% static 'scss/registration.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkInput() {
+      var input_name = document.getElementById('myInputName');
+      var input_password = document.getElementById('myInputPassword')
+      var input_email = document.getElementById('myInputEmail')
+      var button = document.getElementById('myButton');
+
+      if (input_name.value.length > 0 && input_password.value.length > 0 && input_email.value.length > 0) {
+        button.disabled = false;
+      } else {
+        button.disabled = true;
+      }
+    }
+  </script>
+
+
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="username" id="myInputName" onkeyup="checkInput()" placeholder="Имя пользователя">
+  <input type="text" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Пароль">
+  <input type="email" name="email" id="myInputEmail" onkeyup="checkInput()" placeholder="Email">
+  <button type="submit" id="myButton" disabled>Зарегистрироваться</button>
+</form>
+
+<div>
+  {{ universal_text }}
+</div>
+
+</body>
+</html>
+
