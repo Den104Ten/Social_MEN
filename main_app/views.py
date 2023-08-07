@@ -50,14 +50,14 @@ class HomeView(View):
     def get(self, request):
         return render(request, 'main_app/home.html')
 
+
 class ProfileView(View):
     def get(self, request):
         return render(request, 'main_app/profile.html')
 
-class HuiVrot(View):
-    def get(self, request):
-        return render(request, 'main_app/home.html')
 
-class HuiTogdaNeVrot(View):
+class CreatePost(View):
     def get(self, request):
-        return render(request, 'main_app/home.html')
+        return render(request, 'main_app/create_post.html')
+
+
