@@ -2,7 +2,6 @@
 <html lang="en">
 {% load static %}  <!-- Везде подключай эту хуйню -->
 <head>
-    <!-- Проверка дддддддддддддд -->
     <!-- Пример как подключать статические файлы, это css, img, js и другие -->
     <link rel="stylesheet" type="text/css" href="{% static 'scss/registration.css' %}">
     <meta charset="UTF-8">
@@ -14,13 +13,17 @@
     <header class="header">
       <div class="header__container">
         <div class="header__menu menu">
+          <div class="adaptive"></div>
           <ul class="menu__list">
+            <button class="header__burger--btn" id="burger">
+              <span></span><span></span><span></span>
+            </button>
             <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
-            <a href="" class="menu__link link__item"><li class="menu__item item">About</li></a>
-            <a href="" class="menu__link link__item"><li class="menu__item item">Products</li></a>
-            <a href="" class="menu__link link__item"><li class="menu__item item">For teams</li></a>
-            <button class="log-in">Log-in</button>
-            <button class="sign-up">Sign-up</button>
+            <a href="" class="menu__link link__item adapt link__item_1"><li class="menu__item item">About</li></a>
+            <a href="" class="menu__link link__item adapt link__item_2"><li class="menu__item item">Products</li></a>
+            <a href="" class="menu__link link__item adapt link__item_3"><li class="menu__item item">For teams</li></a>
+            <button class="log-in adapt">Log-in</button>
+            <button class="sign-up adapt">Sign-up</button>
           </ul>
         </div>
       </div>
@@ -29,28 +32,6 @@
     <main class="main">
       <div class="register">
         <div class="register__container">
-          <!-- <div class="register__links">
-            <ul class="list">
-              <a href="" class="link">
-                <li class="list__item">
-                  <img class="link--img google" src="{% static 'img/png-transparent-google-logo-google-text-trademark-logo.png' %}" alt="">
-                    <p>Sign up with Google</p>
-                </li>
-              </a>
-              <a href="" class="link">
-                <li class="list__item">
-                  <img class="link--img github" src="{% static 'img/png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail.png' %}" alt="">
-                    <p>Sign up with GitHub</p>
-                </li>
-              </a>
-              <a href="" class="link">
-                <li class="list__item">
-                  <img class="link--img facebook" src="{% static 'img/png-transparent-computer-icons-facebook-blog-facebook-logo-desktop-wallpaper-facebook-icon.png' %}" alt="">
-                    <p>Sign up with Facebook</p>
-                </li>
-              </a>
-            </ul>
-          </div> -->
           <div class="register__auth">
             <div class="register__note">
               register to start chatting in our service.
@@ -63,7 +44,7 @@
               <button type="submit" id="myButton" disabled>Register</button>
             </form>
             <div class="register__links">
-              Already have an account? <a href="">Log in</a>
+              Already have an account? <a href="../login.html">Log in</a>
             </div>
           </div>
         </div>
@@ -89,6 +70,8 @@
       }
     }
   </script>
+
+  <script src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script>
 </body>
 </html>
 

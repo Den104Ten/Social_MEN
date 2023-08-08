@@ -1,0 +1,9 @@
+
+@media (max-width: 1163px) {
+    .header__container {
+        padding: 0px 20px;
+    }
+    .header__burger--btn {
+        margin: 0px 10px;
+    }
+}

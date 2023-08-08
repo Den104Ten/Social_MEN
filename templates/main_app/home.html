@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %} 
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="{% static 'scss/home.css' %}">
 </head>
 <body>
-    {% csrf_token %}
-    <h1>Home page</h1>
-    <button>
-        <a href="{% url 'profile' %}">Профиль</a>
-    </button>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__menu menu">
+                  <ul class="menu__list">
+                    <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
+                    <a href="" class="menu__link link__item"><li class="menu__item item">About</li></a>
+                    <a href="" class="menu__link link__item"><li class="menu__item item">Products</li></a>
+                    <a href="" class="menu__link link__item"><li class="menu__item item">For teams</li></a>
+                    <button class="log-in">Log-in</button>
+                    <button class="sign-up">Sign-up</button>
+                  </ul>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            {% csrf_token %}
+            <nav class="nav">
+                <h1>Home page</h1>
+                <button>
+                    <a href="{% url 'profile' %}">Профиль</a>
+                </button>
 
-    <button>
-        <a href="{% url 'create_post' %}">Хуй</a>  <!-- Кнопка создания поста -->
-    </button>
+                <button>
+                    <a href="{% url 'create_post' %}">Хуй</a>  <!-- Кнопка создания поста -->
+                </button>
+            </nav>
+        </main>
+        <footer class="footer">
 
-
+        </footer>
+    </div>
 </body>
 </html>

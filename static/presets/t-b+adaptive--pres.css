@@ -1,0 +1,106 @@
+/*  TOP-BAR | ADAPTIVE PRESET  */
+
+.header__burger--btn {
+  position: relative;
+  margin: 0px 0px 0px 10px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: #282c34;
+}
+.header__burger--btn span {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #727272;
+  transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+  left: 5px;
+}
+.header__burger--btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+.header.open .header__burger--btn span:nth-child(1) {
+  transform: translateY(0) rotate(135deg);
+}
+.header.open .header__burger--btn span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header__burger--btn span:nth-child(3) {
+  transform: translateY(0) rotate(45deg);
+}
+.header__burger--btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+.header.open .header__burger--btn span {
+  background-color: rgb(109, 109, 182);
+}
+
+@media (max-width: 992px) {
+  .adaptive {
+    position: absolute;
+    background-color: #282c34;
+    width: 190px;
+    height: 100vh;
+    margin: 0px -20px;
+    border-right: 2px solid #000;
+  }
+  .header__burger--btn {
+    display: block;
+  }
+  .adapt {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    background-color: none;
+  }
+  .link__item_1 {
+    width: 189px;
+    text-align: center;
+    left: 0px;
+    top: 80px;
+  }
+  .link__item_2 {
+    width: 189px;
+    text-align: center;
+    left: 0px;
+    top: 140px;
+  }
+  .link__item_3 {
+    width: 189px;
+    text-align: center;
+    left: 0px;
+    top: 200px;
+  }
+  .log-in {
+    top: 10px;
+    left: 100px;
+  }
+  .sign-up {
+    top: 45px;
+    left: 100px;
+  }
+  .menu__list {
+    display: block;
+  }
+  .adaptive {
+    left: -170px;
+    transition: transform 0.5s;
+  }
+  .adapt {
+    left: -190px;
+    transition: transform 0.5s;
+  }
+  .header.open .adapt {
+    transform: translateX(100%);
+  }
+  .header.open .adaptive {
+    transform: translateX(100%);
+  }
+  .header.open .sign-up {
+    transform: translateX(290px);
+  }
+  .header.open .log-in {
+    transform: translateX(290px);
+  }
+}

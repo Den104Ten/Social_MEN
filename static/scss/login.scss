@@ -1,9 +1,18 @@
-@import "nullstyle.css";
+//-  I M P O R T  -//
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/*MEDIA-QUERIES*/
+////
+@import "../presets/ns--pres.css";
+@import "../presets/t-b+adaptive--pres.css";
+
+//-  M E D I A  Q U E R I E S  -//
+
 @media (max-width: 1163px) {
     .header__container {
         padding: 0px 20px;
+    }
+    .header__burger--btn {
+        margin: 0px -20px;
     }
 }
 @media (max-width: 452px) {
@@ -12,13 +21,17 @@
         padding: 0px 20px;
     }
 }
-/*BODY*/
+
+//-  B O D Y  -//
+
 body {
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     background-color: #1b1b1b;
 }
-/*STYLES*/
+
+//-  S T Y L E S  -//
+
 .wrapper {
     header {
         .header__container {
@@ -50,12 +63,12 @@ body {
                         padding: 30.5px 20px;
                         transition: all 0.5s ease-out;
                         &:hover {
-                            background-color: #000000;
+                            background-color: rgb(109, 109, 182);
                             transition: background-color 0.5s ease-out;
                         }
                     }
                     .log-in {
-                        margin: 0px -120px 0px 0px;
+                        margin: 0px -105px 0px 0px;
                     }
                     .log-in, .sign-up {
                         width: 80px;
@@ -139,4 +152,9 @@ body {
     footer {
 
     }
+}
+
+//
+.header__burger--btn {
+    margin: 0px 0px 0px 10px;
 }
