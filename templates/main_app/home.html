@@ -31,9 +31,19 @@
                 </button>
 
                 <button>
-                    <a href="{% url 'create_post' %}">Хуй</a>  <!-- Кнопка создания поста -->
+                    <a href="{% url 'create_post' %}">Создать новый пост</a>  <!-- Кнопка создания поста -->
                 </button>
+
             </nav>
+            {% for post in posts %}  <!-- Здесь работаешь со стилями постов -->
+                <br>
+                <h2>
+                    {{ post.title }}
+                </h2>
+                <p>
+                    {{ post.body|truncatewords:30 }}<a href="{% url 'full_post' pk=post.pk %}">Читать далее...</a> <!-- Добавить ссылку на тело поста -->
+                </p>
+            {% endfor %}
         </main>
         <footer class="footer">
 
