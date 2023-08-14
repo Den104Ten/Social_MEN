@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.views import View
-from .models import User
+from .models import User, Post
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 class RegistrationView(View):
@@ -48,7 +48,9 @@ class LoginView(View):
 
 class HomeView(View):
     def get(self, request):
-        return render(request, 'main_app/home.html')
+        posts = Post.objects.all()
+
+        return render(request, 'main_app/home.html', {'posts': posts})
 
 
 class ProfileView(View):
@@ -60,4 +62,14 @@ class CreatePost(View):
     def get(self, request):
         return render(request, 'main_app/create_post.html')
 
+    def post(self, request):
+        title = request.POST['title']
+        body = request.POST['body']
+        Post.objects.create(title=title, body=body)
+        return redirect('home')
+
+class FullPost(View):
+    def get(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        return render(request, 'main_app/full_post.html', {'post': post})
 

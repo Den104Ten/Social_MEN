@@ -2,33 +2,32 @@
 <html lang="en">  <!-- Отдельная страничка. Ссылка на эту страничку есть на HomePage -->
 {% load static %}
 <head>
-    <meta charset="UTF-8">
     <title>Создание поста</title>
-    <link rel="stylesheet" href="{% static 'scss/create_post.css' %}">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__container">
-                <div class="header__menu menu">
-                  <ul class="menu__list">
-                    <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">About</li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">Products</li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">For teams</li></a>
-                    <button class="log-in">Log-in</button>
-                    <button class="sign-up">Sign-up</button>
-                  </ul>
-                </div>
-            </div>
-        </header>
-        <main class="main">
+    <h1>Создание поста</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Название поста:</label><br>
+        <input type="text" id="myInputTitle" onkeyup="checkInput()" name="title"><br><br>
 
-        </main>
-        <footer class="footer">
+        <label for="body">Тело поста:</label><br>
+        <input id="myTextBody" name="body" onkeyup="checkInput()"><br><br>
 
-        </footer>
-    </div>
-    <h1>Создание поста!</h1>
+        <button type="submit" id="myButtonSubmit" disabled>Создать пост</button>  <!-- Кнопка не активна, если ничего не написано -->
+    </form>
+    <script>
+    function checkInput() {
+      var input_title = document.getElementById('myInputTitle');
+      var input_body = document.getElementById('myTextBody')
+      var button = document.getElementById('myButtonSubmit');
+
+      if (input_title.value.length > 0 && input_body.value.length > 0) {
+        button.disabled = false;
+      } else {
+        button.disabled = true;
+      }
+    }
+    </script>
 </body>
 </html>
