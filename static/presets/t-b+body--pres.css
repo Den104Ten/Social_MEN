@@ -6,6 +6,7 @@
     min-height: 75px;
     background-color: #282c34;
     position: fixed;
+    z-index: 2;
     left: 0;
     top: 0;
 }
@@ -38,7 +39,7 @@
     transition: background-color 0.5s ease-out;
 }
 .wrapper header .header__container .menu .menu__list .log-in {
-    margin: 0px -120px 0px 0px;
+    margin: 0px -105px 0px 0px;
 }
 .wrapper header .header__container .menu .menu__list .log-in, .wrapper header .header__container .menu .menu__list .sign-up {
     width: 80px;
@@ -57,6 +58,5 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
     background-color: #1b1b1b;
 }

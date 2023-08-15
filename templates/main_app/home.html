@@ -8,46 +8,76 @@
 </head>
 <body>
     <div class="wrapper">
+
         <header class="header">
             <div class="header__container">
-                <div class="header__menu menu">
-                  <ul class="menu__list">
-                    <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">About</li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">Products</li></a>
-                    <a href="" class="menu__link link__item"><li class="menu__item item">For teams</li></a>
-                    <button class="log-in">Log-in</button>
-                    <button class="sign-up">Sign-up</button>
-                  </ul>
-                </div>
+              <div class="header__menu menu">
+                <div class="adaptive"></div>
+                <ul class="menu__list">
+                  <button class="header__burger--btn" id="burger">
+                    <span></span><span></span><span></span>
+                  </button>
+                  <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
+                  <a href="" class="menu__link link__item adapt link__item_1"><li class="menu__item item">About</li></a>
+                  <a href="" class="menu__link link__item adapt link__item_2"><li class="menu__item item">Products</li></a>
+                  <a href="" class="menu__link link__item adapt link__item_3"><li class="menu__item item">For teams</li></a>
+                  <button class="log-in adapt">Log-in</button>
+                  <button class="sign-up adapt">Sign-up</button>
+                </ul>
+              </div>
             </div>
         </header>
+
         <main class="main">
             {% csrf_token %}
-            <nav class="nav">
-                <h1>Home page</h1>
-                <button>
-                    <a href="{% url 'profile' %}">Профиль</a>
-                </button>
+            <div class="post">
+                <div class="post__container">
+                    <div class="post__navigation nav">
+                        <nav class="nav__section">
+                            <h1 class="nav__info">Home page</h1>
+                            <div class="nav__section--action">
+                                <a class="nav__link adaptive--link link--src-000FGY" href="{% url 'profile' %}">
+                                    <img class="nav__link--img adaptive--img img--src-000FGY" src="{% static 'img/profile-user.svg' %}" alt="">
+                                </a>
+                                <a class="nav__link adaptive--link link--src-000FGI" href="{% url 'create_post' %}">
+                                    <img class="nav__link--img adaptive--img img--src-000FGI" src="{% static 'img/add-55.png' %}" alt="">
+                                </a>
+                                <button class="nav__button--transfer">
+                                    <a class="nav__link" href="{% url 'profile' %}">Profile</a>
+                                </button>
+                                <button class="nav__button--transfer">
+                                    <a class="nav__link" href="{% url 'create_post' %}">Create new post</a>  <!-- Кнопка создания поста -->
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                    <hr>
 
-                <button>
-                    <a href="{% url 'create_post' %}">Создать новый пост</a>  <!-- Кнопка создания поста -->
-                </button>
-
-            </nav>
-            {% for post in posts %}  <!-- Здесь работаешь со стилями постов -->
-                <br>
-                <h2>
-                    {{ post.title }}
-                </h2>
-                <p>
-                    {{ post.body|truncatewords:30 }}<a href="{% url 'full_post' pk=post.pk %}">Читать далее...</a> <!-- Добавить ссылку на тело поста -->
-                </p>
-            {% endfor %}
+                    {% for post in posts %}  <!-- Здесь работаешь со стилями постов -->
+                    <div class="post__publication publication">
+                        <div class="publication__title">
+                            {{ post.title }}
+                        </div>
+                        <div class="publication__text--link">
+                            {{ post.body|truncatewords:30 }}
+                            <br>
+                            <a class="publication__full-post--link" href="{% url 'full_post' pk=post.pk %}">
+                                <button class="publication__full-post--button">
+                                    See more...
+                                </button>
+                            </a> <!-- Добавить ссылку на тело поста -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </main>
+
         <footer class="footer">
 
         </footer>
+
     </div>
+    <script src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script>
 </body>
 </html>
