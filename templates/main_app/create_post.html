@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">  <!-- Отдельная страничка. Ссылка на эту страничку есть на HomePage -->
-{% load static %}
+<html lang="en">
+{% load static %} 
 <head>
-    <title>Создание поста</title>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'scss/create_post.css' %}">
 </head>
 <body>
-    <h1>Создание поста</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="title">Название поста:</label><br>
-        <input type="text" id="myInputTitle" onkeyup="checkInput()" name="title"><br><br>
+    <div class="wrapper">
+  
+      <header class="header">
+        <div class="header__container">
+          <div class="header__menu menu">
+            <div class="adaptive"></div>
+            <ul class="menu__list">
+              <button class="header__burger--btn" id="burger">
+                <span></span><span></span><span></span>
+              </button>
+              <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
+              <a href="" class="menu__link link__item adapt link__item_1"><li class="menu__item item">About</li></a>
+              <a href="" class="menu__link link__item adapt link__item_2"><li class="menu__item item">Products</li></a>
+              <a href="" class="menu__link link__item adapt link__item_3"><li class="menu__item item">For teams</li></a>
+              <button class="log-in adapt">Log-in</button>
+              <button class="sign-up adapt">Sign-up</button>
+            </ul>
+          </div>
+        </div>
+      </header>
 
-        <label for="body">Тело поста:</label><br>
-        <input id="myTextBody" name="body" onkeyup="checkInput()"><br><br>
+      <main class="main">
+        <div class="creation">
+          <div class="creation__container">
+            <div class="creation__produce"> Create a post </div>
+            <hr class="creation__produce--underline">
+            <div class="creation__basis post">
+              <form method="POST">
+                  {% csrf_token %}
+                  <label class="post__title" for="title">Title:</label><br>
+                  <input class="post__title--input" type="text" id="myInputTitle" onkeyup="checkInput()" name="title"><br>
+                  <hr class="post__title--underline">
+                  <div class="post__sizing">
+                    <label class="post__text" for="body">Text:</label><br>
+                    <textarea class="post__text--textarea" wrap="soft" id="myTextBody" name="body" onkeyup="checkInput()"></textarea><br>
+                  </div>
+                  <div class="post--button">
+                    <button class="post__publish--button" type="submit" id="myButtonSubmit" disabled>Publish</button>  <!-- Кнопка не активна, если ничего не написано -->
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
 
-        <button type="submit" id="myButtonSubmit" disabled>Создать пост</button>  <!-- Кнопка не активна, если ничего не написано -->
-    </form>
-    <script>
-    function checkInput() {
-      var input_title = document.getElementById('myInputTitle');
-      var input_body = document.getElementById('myTextBody')
-      var button = document.getElementById('myButtonSubmit');
+      <footer class="footer">
 
-      if (input_title.value.length > 0 && input_body.value.length > 0) {
-        button.disabled = false;
-      } else {
-        button.disabled = true;
-      }
-    }
-    </script>
+      </footer>
+      
+    </div>
+    <script src="../../static/js/presetsJS/send-limit--pres__[JS].js"></script>
+    <script src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script>
 </body>
 </html>

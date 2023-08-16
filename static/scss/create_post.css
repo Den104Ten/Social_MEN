@@ -1,2 +1,100 @@
 @import "../presets/ns--pres.css";
-@import "../presets/t-b+body--pres.css";/*# sourceMappingURL=create_post.css.map */
+@import "../presets/t-b+body--pres.css";
+@import "../presets/t-b+adaptive--pres.css";
+@import "../presets/media-queries--pres.css";
+@media (max-width: 807.98px) {
+  main {
+    padding: 0px 20px;
+  }
+}
+@media (max-width: 330.98px) {
+  .creation__produce {
+    font-size: 24px !important;
+  }
+  .creation__produce--underline {
+    width: 165px !important;
+  }
+}
+@media (max-width: 992px) {
+  main {
+    margin: 130px 0px 0px 0px !important;
+  }
+}
+body {
+  overflow: hidden;
+}
+
+.wrapper main {
+  margin: 210px 0px 0px 0px;
+}
+.wrapper main .creation__container {
+  max-width: 768px;
+  min-height: 100px;
+  margin: 0 auto 0 auto;
+  padding: 25px;
+  color: #fff;
+  border: 5px solid #282c34;
+  border-radius: 5px;
+  background-color: #071623;
+}
+.wrapper main .creation__produce {
+  font-size: 34px;
+  font-weight: 600;
+}
+.wrapper main .creation__produce--underline {
+  width: 231px;
+  height: 5px;
+  margin: 1px 0px 0px 0px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.wrapper main .creation__basis {
+  margin: 40px 0px 0px 0px;
+}
+.wrapper main .creation .post__title--input, .wrapper main .creation .post__text--textarea {
+  background-color: #2b2a33;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px 0px 0px 0px;
+}
+.wrapper main .creation .post__title, .wrapper main .creation .post__text {
+  font-size: 20px;
+  font-weight: 600;
+}
+.wrapper main .creation .post__sizing {
+  margin: 15px 0px 0px 0px;
+}
+.wrapper main .creation .post--button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px 0px 0px 0px;
+}
+.wrapper main .creation .post__title--underline {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 15px 0px 0px 0px;
+}
+.wrapper main .creation .post__title--input {
+  width: 180px;
+  height: 25px;
+}
+.wrapper main .creation .post__text--textarea {
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+}
+.wrapper main .creation .post__publish--button {
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  background-color: #1057ac;
+  border-radius: 5px;
+  transition: all 1.1s ease-out;
+}
+.wrapper main .creation .post__publish--button:hover {
+  transition: all 1.1s ease-out;
+  background-color: #0a3c79;
+}/*# sourceMappingURL=create_post.css.map */
