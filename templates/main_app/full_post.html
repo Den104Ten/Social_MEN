@@ -1,2 +1,51 @@
-<h1>{{ post.title }}</h1> <!-- Название поста -->
-{{ post.body|linebreaks }}  <!-- Тело поста -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'scss/full_post.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="header__container">
+              <div class="header__menu menu">
+                <div class="adaptive"></div>
+                <ul class="menu__list">
+                  <button class="header__burger--btn" id="burger">
+                    <span></span><span></span><span></span>
+                  </button>
+                  <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
+                  <a href="" class="menu__link link__item adapt link__item_1"><li class="menu__item item">About</li></a>
+                  <a href="" class="menu__link link__item adapt link__item_2"><li class="menu__item item">Products</li></a>
+                  <a href="" class="menu__link link__item adapt link__item_3"><li class="menu__item item">For teams</li></a>
+                  <button class="log-in adapt">Log-in</button>
+                  <button class="sign-up adapt">Sign-up</button>
+                </ul>
+              </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="post">
+                <div class="post__container">
+                    <div class="post__title title"> {{ post.title }} </div> <!-- Название поста -->
+                    <hr class="post__title--underline">
+                    <div class="post__text text"> {{ post.body|linebreaks }} </div> <!-- Тело поста -->
+                </div>
+            </div>
+            <!-- <div class="title">{{ post.title }}</div>  Название поста -->
+            <!--<div class="text">{{ post.body|linebreaks }}</div>  Тело поста -->
+        </main>
+
+        <footer class="footer">
+
+        </footer>
+
+    </div>
+    <script src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script>
+</body>
+</html>
