@@ -21,7 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Пароль от почты MediaSpaceHelp: um8@qw366m
+
 SECRET_KEY = 'django-insecure-z-m#vz9(4gpgi5$7z(*mf_9lfmk5n*&z=0jj9rg-um8@qw366m'
+
+# Конфигурация сервера электронной почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mediaspacehelp@gmail.com'
+EMAIL_HOST_PASSWORD = 'qaxu vqzt kegv aufj'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'mediaspacehelp@gmail.com'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,3 +139,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+

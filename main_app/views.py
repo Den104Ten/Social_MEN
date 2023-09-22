@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth import authenticate, login
 from django.views import View
 from .models import User, Post
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+from django.core.mail import send_mail
 
 class RegistrationView(View):
     universal_text = 'Страница регистрации'
@@ -45,6 +46,61 @@ class LoginView(View):
         except MultipleObjectsReturned:
             return redirect('register')
 
+
+
+# Функция для отправки письма
+
+# Сделать код действительным в течении трех минут, так как у разных пользователей разные коды
+import time
+from random import randrange
+
+def generate_new_code():
+    return randrange(1000, 9999)
+
+new_code = generate_new_code()  # Вообщем проверка работает, но код теперь не обновляется.
+
+def send_email(email):
+    # Теперь каждый раз код обновляется. Но теперь надо понять возможно ли будет проводить проверку на другой страничке путем вызова этой переменной
+    subject = 'Восстановление пароля'
+    message = f'Код для входа в аккаунт: {new_code}'
+    from_email = 'mediaspacehelp@gmail.com'
+    recipient_list = [email]
+
+    send_mail(subject, message, from_email, recipient_list)
+
+
+class ResetPasswordView(View):
+
+    def get(self, request):
+        return render(request, 'main_app/Password_Reset.html')
+
+
+    def post(self, request):
+        email = request.POST['email_password_reset']
+        try:
+            if User.objects.get(email=email):
+                send_email(email)
+                return redirect('check_reset_password')  # здесь нужно перенаправить на страницу подтверждения кода из письма и проверить
+            else:
+                # потом сделать, динамическую переменную для вывода информации о том, что пользователя с такой почты нет
+                return redirect('login')
+        except ObjectDoesNotExist:
+            return redirect('login')
+        except MultipleObjectsReturned:
+            return redirect('login')
+
+
+class CheckResetPassword(View):
+
+    def get(self, request):
+        return render(request, 'main_app/Password_CheckReset.html')
+
+    def post(self, request):
+        code = request.POST['check_password_reset']  # не работает так как функция просто вызывается второй раз, а нужно как-то сохранить значение
+        if str(code) == str(new_code):
+            return redirect('home')
+        else:
+            return redirect('login')
 
 class HomeView(View):
     def get(self, request):

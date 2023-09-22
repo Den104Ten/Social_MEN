@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import reverse
+from django.utils import timezone
 
 
 class User(models.Model):
@@ -11,3 +11,9 @@ class User(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
+    publish = models.DateTimeField(default=timezone.now())  # Время публикации поста
+
+    class Meta:
+        ordering = ['-publish']
+
+
