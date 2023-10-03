@@ -53,7 +53,10 @@
                     </div>
                     <hr>
 
-                    {% for post in posts %}  <!-- Здесь работаешь со стилями постов -->
+
+                    <!-- Тут посты выводятся одни за другим DJANGO -->
+                    <!-- Здесь работаешь со стилями постов -->
+                    {% for post in posts %}
                     <div class="post__publication publication">
                         <div class="publication__title">
                             {{ post.title }}
@@ -65,10 +68,13 @@
                                 <button class="publication__full-post--button">
                                     See more...
                                 </button>
-                            </a> <!-- Добавить ссылку на тело поста -->
+                            </a>
                         </div>
                     </div>
                     {% endfor %}
+                    <!-- Тут посты выводятся одни за другим DJANGO -->
+
+
                 </div>
             </div>
         </main>

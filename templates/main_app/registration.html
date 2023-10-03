@@ -36,6 +36,9 @@
             <div class="register__note">
               register to start chatting in our service.
             </div>
+
+
+            <!-- Это нужно для создания аккаунта DJANGO -->
             <form method="post">
               {% csrf_token %}
               <input type="text" name="username" id="myInputName" onkeyup="checkInput()" placeholder="Username">
@@ -43,9 +46,16 @@
               <input type="email" name="email" id="myInputEmail" onkeyup="checkInput()" placeholder="Email">
               <button type="submit" id="myButton" disabled>Register</button>
             </form>
+            <!-- Это нужно для создания аккаунта DJANGO -->
+              
+
+            <!-- Это нужно для входа в существующий аккаунт DJANGO -->
             <div class="register__links">
               Already have an account? <a href="{% url 'login' %}">Log in</a>
             </div>
+            <!-- Это нужно для входа в существующий аккаунт DJANGO -->
+
+
           </div>
         </div>
       </div>
