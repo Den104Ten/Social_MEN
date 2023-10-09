@@ -1,67 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'scss/login.css' %}">
-    <meta name="viewport" content="width=device-width">
-    <title>SpaceShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MediaSPACE</title>
 </head>
 <body>
   <div class="wrapper">
     <header class="header">
-      <div class="header__container">
-        <div class="header__menu menu">
-          <div class="adaptive"></div>
-          <ul class="menu__list">
-            <button class="header__burger--btn" id="burger">
-              <span></span><span></span><span></span>
-            </button>
-            <a href="" class="menu__link"><li class="menu__item logo"><img src="{% static 'img/black-earth-circle-with-thin-grid.png' %}" alt=""></li></a>
-            <a href="" class="menu__link link__item adapt link__item_1"><li class="menu__item item">About</li></a>
-            <a href="" class="menu__link link__item adapt link__item_2"><li class="menu__item item">Products</li></a>
-            <a href="" class="menu__link link__item adapt link__item_3"><li class="menu__item item">For teams</li></a>
-            <button class="log-in adapt">Log-in</button>
-            <button class="sign-up adapt">Sign-up</button>
-          </ul>
-        </div>
-      </div>
+      <!-- ___ -->
     </header>
 
+
     <main class="main">
-      <div class="login">
-        <div class="login__container">
-          <div class="login__note">
-            log-in
-          </div>
 
-
-          <!-- Это нужно для входа в аккаунт DJANGO -->
-          <form method="post">
-            {% csrf_token %}
-            <input type="text" name="username" id="myInputUsername" onkeyup="checkInput()" placeholder="Username">
-            <input type="password" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Password">
-            <button type="submit" id="myButton" disabled>Log-in</button>
-          </form>
-          <!-- Это нужно для входа в аккаунт DJANGO -->
-
-
-          <!-- Это нужно для сброса пароля аккаунта DJANGO -->
-          <div class="login__links">
-            Forgot the password? <a href="{% url 'reset_password' %}">Reset</a>
-          </div>
-          <!-- Это нужно для сброса пароля аккаунта DJANGO -->
-
-
+      <div class="container">
+        <div class="container__logo logo">
+            <img class="logo--img" src="../../static/img/stars.png" alt="">
+            <div class="logo__text">
+              MediaSPACE
+            </div>
         </div>
+
+        <div class="container__body">
+          <div class="container__note">
+            Вход в аккаунт
+          </div>
+          <form class="container--form form BACK-END" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="myInputUsername" onkeyup="checkInput()" placeholder="Логин">
+            <input type="password" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Пароль">
+            <button class="form--button" type="submit" id="myButton" disabled>Войти</button>
+            <a class="form--move-To" href="">
+                Забыли пароль?
+            </a>
+            <div class="line"></div>
+            <button class="form--button">
+              Создать новый аккаунт
+            </button>
+          </form>
+        </div>
+        
       </div>
+
     </main>
 
+
     <footer class="footer">
-
+      <!-- ___ -->
     </footer>
+  </div>
 
-    <script>
+    <!-- Это нужно для входа в аккаунт DJANGO -->
+    <!-- <form method="post">
+      {% csrf_token %}
+      <input type="text" name="username" id="myInputUsername" onkeyup="checkInput()" placeholder="Username">
+      <input type="password" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Password">
+      <button type="submit" id="myButton" disabled>Log-in</button>
+    </form> -->
+    <!-- Это нужно для входа в аккаунт DJANGO -->
+
+
+    <!-- Это нужно для сброса пароля аккаунта DJANGO -->
+    <!-- <div class="login__links">
+      Forgot the password? <a href="{% url 'reset_password' %}">Reset</a>
+    </div> -->
+    <!-- Это нужно для сброса пароля аккаунта DJANGO -->
+
+
+    <!-- <script>
       function checkInput() {
         var input_username = document.getElementById('myInputUsername');
         var input_password = document.getElementById('myInputPassword')
@@ -74,7 +91,6 @@
         }
       }
     </script>
-    <script defer src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script>
-  </div>
+    <script defer src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script> -->
 </body>
 </html>

@@ -1,126 +1,94 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import "../presets/ns--pres.css";
-@import "../presets/t-b+adaptive--pres.css";
-@import "../presets/media-queries--pres.css";
-@media (max-width: 452px) {
-  .register {
-    max-width: 437px;
-    padding: 0px 20px;
-  }
-}
+@import "nullstyle.css";
 body {
-  font-family: "Montserrat", sans-serif;
-  overflow: hidden;
-  background-color: #1b1b1b;
+  background-color: #161721;
+  font-family: "Inter", sans-serif;
+  color: #fff;
 }
 
-.wrapper header .header__container {
-  min-width: 100%;
-  min-height: 75px;
-  background-color: #282c34;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-.wrapper header .header__container .menu {
-  max-width: 1140px;
-  min-height: 75px;
-  margin: 0 auto;
-}
-.wrapper header .header__container .menu .menu__list {
+body .main .container {
   display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1140px;
-  min-height: 75px;
 }
-.wrapper header .header__container .menu .menu__list .menu__link {
+body .main .container__sizing {
+  max-width: 530px;
+  min-height: 550px;
+  margin: 0px 20px;
+}
+body .main .container .logo {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  margin: 0px 0px -5px 0px;
+}
+body .main .container .logo--img {
+  width: 90px;
+  height: 90px;
+}
+body .main .container .logo__text {
+  font-size: 54.5px;
   font-weight: 500;
-  color: #fff;
+  margin: 12px 0px 0px 0px;
 }
-.wrapper header .header__container .menu .menu__list .menu__link img {
-  max-width: 50px;
-  max-height: 50px;
+body .main .container__body {
+  border: 3px solid #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
 }
-.wrapper header .header__container .menu .menu__list .link__item {
-  padding: 30.5px 20px;
-  transition: all 0.5s ease-out;
-}
-.wrapper header .header__container .menu .menu__list .link__item:hover {
-  background-color: rgb(109, 109, 182);
-  transition: background-color 0.5s ease-out;
-}
-.wrapper header .header__container .menu .menu__list .log-in {
-  margin: 0px -105px 0px 0px;
-}
-.wrapper header .header__container .menu .menu__list .log-in, .wrapper header .header__container .menu .menu__list .sign-up {
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
-  color: #fff;
-  font-weight: 600;
-  background-color: #282c34;
-  border: 2px solid #fff;
-  transition: all 0.5s ease-out;
-}
-.wrapper header .header__container .menu .menu__list .log-in:hover, .wrapper header .header__container .menu .menu__list .sign-up:hover {
-  background-color: #000000;
-  transition: all 0.5s ease-out;
-}
-.wrapper main .register {
-  margin: 200px 0px 0px 0px;
-  max-width: 100%;
-  min-height: 600px;
-}
-.wrapper main .register .register__container {
-  max-width: 400px;
-  min-height: 600px;
-  border: 3px solid #282c34;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 0 auto;
-}
-.wrapper main .register .register__container .register__auth .register__note {
-  font-size: 32px;
-  font-weight: 600;
-  color: #fff;
-  margin: 10px 0px 0px 5px;
-}
-.wrapper main .register .register__container .register__auth .register__links {
-  color: #fff;
+body .main .container__note {
   text-align: center;
-  margin: 15px 0px 0px 0px;
+  margin-bottom: 17px;
+  font-size: 20px;
 }
-.wrapper main .register .register__container .register__auth .register__links a {
-  color: rgb(109, 109, 182);
-}
-.wrapper main .register .register__container .register__auth input {
-  width: 100%;
-  height: 40px;
-  margin: 10px 0px 0px 0px;
-  background-color: #282c34;
-  color: #fff;
-  padding: 0px 0px 0px 10px;
-  border: 2px solid #555555;
-  border-radius: 5px;
-}
-.wrapper main .register .register__container .register__auth form {
+body .main .container--form {
   display: flex;
   flex-direction: column;
-  margin: 35px 0px 0px 0px;
 }
-.wrapper main .register .register__container .register__auth form button {
-  margin: 70px 0px 0px 0px;
-  border-radius: 5px;
-  background-color: #282c34;
-  border: 2px solid #555555;
-  color: #fff;
-  font-weight: 600;
-  height: 40px;
-  transition: all 0.15s ease-out;
+body .main .container--form input {
+  min-width: 440px;
+  min-height: 60px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 0px 0px 0px 20px;
 }
-.wrapper main .register .register__container .register__auth form button:hover {
-  transition: all 0.15s ease-out;
-  background-color: #000;
+body .main .container--form input:not(:last-child) {
+  margin-bottom: 20px;
+}
+body .main .container .line {
+  max-width: 420px;
+  height: 2px;
+  margin: 0px 0px 0px 12px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+body .main .container .c-btn--1 {
+  min-width: 440px;
+  min-height: 60px;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 15px;
+  background-color: #fff;
+  transition: all 0.5s ease-out;
+}
+body .main .container .c-btn--1:hover {
+  background-color: #b4bfca;
+  transition: all 0.5s ease-out;
+}
+body .main .container .c-btn--2 {
+  min-width: 440px;
+  min-height: 60px;
+  border-radius: 15px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #000;
+  margin-top: 15px;
+  transition: all 0.5s ease-out;
+}
+body .main .container .c-btn--2:hover {
+  background-color: #b4bfca;
+  transition: all 0.5s ease-out;
 }/*# sourceMappingURL=registration.css.map */
