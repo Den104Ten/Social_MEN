@@ -1,65 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+  {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'scss/login.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'scss/login.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MediaSPACE</title>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="header">
-      <!-- ___ -->
-    </header>
+  </head>
+  <body>
+    <section class="login-page">
+      <a class="login-page__logo-link" href="/">
+        <img
+          class="login-page__logo-image"
+          src="../../static/img/stars.png"
+          alt=""
+        />
+        <span class="login-page__logo-text">MediaSPACE</span>
+      </a>
 
-
-    <main class="main">
-
-      <div class="container">
-        <div class="container__logo logo">
-            <img class="logo--img" src="../../static/img/stars.png" alt="">
-            <div class="logo__text">
-              MediaSPACE
-            </div>
-        </div>
-
-        <div class="container__body">
-          <div class="container__note">
-            Вход в аккаунт
-          </div>
-          <form class="container--form form BACK-END" method="post">
-            {% csrf_token %}
-            <input type="text" name="username" id="myInputUsername" onkeyup="checkInput()" placeholder="Логин">
-            <input type="password" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Пароль">
-            <button class="form--button" type="submit" id="myButton" disabled>Войти</button>
-            <a class="form--move-To" href="">
-                Забыли пароль?
-            </a>
-            <div class="line"></div>
-            <button class="form--button">
-              Создать новый аккаунт
-            </button>
-          </form>
-        </div>
-        
+      <div class="login-page__container-form">
+        <div class="login-page__title">Вход в аккаунт</div>
+        <form class="login-page__form form BACK-END" method="post">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="username"
+            id="myInputUsername"
+            onkeyup="checkInput()"
+            placeholder="Логин"
+            class="login-page__form-input login-page__input-login"
+          />
+          <input
+            type="password"
+            name="password"
+            id="myInputPassword"
+            onkeyup="checkInput()"
+            placeholder="Пароль"
+            class="login-page__form-input"
+          />
+          <button
+            class="login-page__button-form"
+            type="submit"
+            id="myButton"
+            disabled
+          >
+            Войти
+          </button>
+          <a class="login-page__password-recovery" href="/"> Забыли пароль? </a>
+          <div class="login-page__form-line"></div>
+          <a class="login-page__button-form" href="">Создать новый аккаунт</a>
+        </form>
       </div>
-
-    </main>
-
-
-    <footer class="footer">
-      <!-- ___ -->
-    </footer>
-  </div>
+    </section>
 
     <!-- Это нужно для входа в аккаунт DJANGO -->
     <!-- <form method="post">
@@ -70,13 +80,11 @@
     </form> -->
     <!-- Это нужно для входа в аккаунт DJANGO -->
 
-
     <!-- Это нужно для сброса пароля аккаунта DJANGO -->
     <!-- <div class="login__links">
       Forgot the password? <a href="{% url 'reset_password' %}">Reset</a>
     </div> -->
     <!-- Это нужно для сброса пароля аккаунта DJANGO -->
-
 
     <!-- <script>
       function checkInput() {
@@ -92,5 +100,5 @@
       }
     </script>
     <script defer src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script> -->
-</body>
+  </body>
 </html>

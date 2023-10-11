@@ -1,90 +1,96 @@
-@import "nullstyle.css";
+@import 'nullstyle.css';
 body {
   background-color: #161721;
   font-family: "Inter", sans-serif;
   color: #fff;
 }
 
-body .main .container {
+.login-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
-body .main .container__sizing {
+.login-page__sizing {
   max-width: 530px;
   min-height: 550px;
   margin: 0px 20px;
 }
-body .main .container .logo {
-  font-family: "Montserrat", sans-serif;
+.login-page__logo-link {
+  text-decoration: none;
   display: flex;
-  margin: 0px 0px -5px 0px;
+  align-items: center;
 }
-body .main .container .logo--img {
-  width: 90px;
-  height: 90px;
+.login-page__logo-image {
+  max-width: 90px;
+  max-height: 90px;
 }
-body .main .container .logo__text {
+.login-page__logo-text {
+  color: #fff;
   font-size: 54.5px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  margin: 12px 0px 0px 0px;
 }
-body .main .container__body {
+.login-page__container-form {
   border: 3px solid #fff;
   border-radius: 15px;
   padding: 40px;
   box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
 }
-body .main .container__note {
+.login-page__title {
   text-align: center;
-  margin-bottom: 17px;
   font-size: 20px;
 }
-body .main .container--form {
+.login-page__form {
   display: flex;
   flex-direction: column;
+  margin-top: 17px;
 }
-body .main .container--form input {
+.login-page__form:first-child {
+  margin-top: 0;
+}
+.login-page__form-input {
   min-width: 440px;
   min-height: 60px;
   border-radius: 15px;
   font-size: 16px;
   padding: 0px 0px 0px 20px;
+  margin-top: 20px;
 }
-body .main .container--form input:not(:last-child) {
-  margin-bottom: 20px;
+.login-page__input-login {
+  margin-top: 0;
 }
-body .main .container .form--button {
-  min-width: 440px;
-  min-height: 60px;
+.login-page__button-form {
+  padding-top: 18px;
+  padding-bottom: 18px;
   border-radius: 15px;
-  font-size: 16px;
+  text-align: center;
+  font-size: 18px;
   background-color: #fff;
   color: #000;
   transition: all 0.5s ease-out;
+  margin-top: 30px;
 }
-body .main .container .form--button:last-child {
-  margin: 30px 0px 0px 0px;
+.login-page__button-form:nth-of-type(1) {
+  margin-top: 20px;
 }
-body .main .container .form--button:hover {
+.login-page__button-form:hover {
   background-color: #b4bfca;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
-body .main .container .form--move-To {
+.login-page__password-recovery {
   display: block;
-  text-decoration: underline;
   margin: 10px 0px 20px 0px;
   text-align: center;
-  color: #C2C2C2;
+  color: #c2c2c2;
   transition: all 0.2s ease-out;
 }
-body .main .container .form--move-To:hover {
+.login-page__password-recovery:hover {
   color: #757575;
   transition: all 0.2s ease-out;
 }
-body .main .container .line {
+.login-page__form-line {
   max-width: 420px;
   height: 2px;
   margin: 0px 0px 0px 12px;
