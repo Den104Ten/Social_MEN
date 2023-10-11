@@ -1,113 +1,101 @@
 // IMPORT //
-@import "nullstyle.css";
+@import 'nullstyle.css';
 
 // BODY //
 body {
-    background-color: #161721;
-    font-family: 'Inter',  sans-serif;
-    color: #fff;
+  background-color: #161721;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
 }
 
-
 // STYLES //
-body {
-    .header {
 
+.registration-page {
+  &__container {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo-link {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 0px 0px -5px 0px;
+  }
+  &__logo-image {
+    max-width: 90px;
+    max-height: 90px;
+  }
+  &__logo-text {
+    font-size: 54.5px;
+    font-weight: 500;
+    margin: 12px 0px 0px 0px;
+  }
+  &__container-form {
+    border: 3px solid #fff;
+    border-radius: 15px;
+    padding: 40px;
+    -webkit-box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
+    -moz-box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
+    box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
+  }
+  &__title {
+    text-align: center;
+    font-size: 20px;
+  }
+  &__form {
+    display: flex;
+    margin-top: 17px;
+    flex-direction: column;
+    row-gap: 20px;
+    input {
+      min-width: 440px;
+      min-height: 60px;
+      border-radius: 15px;
+      font-size: 16px;
+      padding: 0px 0px 0px 20px;
     }
+  }
+  &__line {
+    max-width: 420px;
+    height: 2px;
+    margin: 0px 0px 0px 12px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  &__form-button {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #000;
 
-    .main {
-        .container {
-            display: flex;
-            flex: 0 1 auto;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-            &__sizing {
-                max-width: 530px;
-                min-height: 550px;
-                margin: 0px 20px;
-            }
-            .logo {
-                font-family: 'Montserrat', sans-serif;
-                display: flex;
-                margin: 0px 0px -5px 0px;
-                &--img {
-                    width: 90px;
-                    height: 90px;
-                }
-                &__text {
-                    font-size: 54.5px;
-                    font-weight: 500;
-                    margin: 12px 0px 0px 0px;
-                }
-            }
-            &__body {
-                border: 3px solid #fff;
-                border-radius: 15px;
-                padding: 40px;
-                -webkit-box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
-                -moz-box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
-                box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
-            }
-            &__note {
-                text-align: center;
-                margin-bottom: 17px;
-                font-size: 20px;
-            }
-            &--form {
-                display: flex;
-                flex-direction: column;
-                input {
-                    min-width: 440px;
-                    min-height: 60px;
-                    border-radius: 15px;
-                    font-size: 16px;
-                    padding: 0px 0px 0px 20px;
-                    &:not(:last-child) {
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-            .line {
-                max-width: 420px;
-                height: 2px;
-                margin: 0px 0px 0px 12px;
-                border-radius: 10px;
-                background-color: #fff;
-            }
-            .c-btn--1 {
-                min-width: 440px;
-                min-height: 60px;
-                border-radius: 15px;
-                font-size: 16px;
-                color: #000;
-                margin-bottom: 15px;
-                background-color: #fff;
-                transition: all 0.5s ease-out;
-                &:hover {
-                    background-color: #b4bfca;
-                    transition: all 0.5s ease-out;
-                }
-            }
-            .c-btn--2 {
-                min-width: 440px;
-                min-height: 60px;
-                border-radius: 15px;
-                background-color: #fff;
-                font-size: 16px;
-                color: #000;
-                margin-top: 15px;
-                transition: all 0.5s ease-out;
-                &:hover {
-                    background-color: #b4bfca;
-                    transition: all 0.5s ease-out;
-                }
-            }
-        }
+    background-color: #fff;
+    transition: all 0.5s ease-out;
+    &:hover {
+      background-color: #b4bfca;
+      transition: all 0.5s ease-out;
     }
+  }
+  &__link-login {
+    display: block;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: center;
 
-    .footer {
-
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 18px;
+    color: #000;
+    transition: all 0.5s ease-out;
+    &:hover {
+      background-color: #b4bfca;
+      transition: all 0.5s ease-out;
     }
+  }
 }

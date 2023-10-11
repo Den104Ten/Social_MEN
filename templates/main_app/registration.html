@@ -1,89 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+  {% load static %}
 
-<head>
-  <link rel="stylesheet" href="{% static 'scss/registration.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MediaSPACE</title>
-</head>
+  <head>
+    <link rel="stylesheet" href="{% static 'scss/registration.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MediaSPACE</title>
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header class="header">
-      <!-- ___ -->
-    </header>
+  <body>
+    <section class="registration-page">
+      <div class="registration-page__container">
+        <a href="/" class="registration-page__logo-link">
+          <img
+            class="registration-page__logo-image"
+            src="../../static/img/stars.png"
+            alt=""
+          />
+          <span class="registration-page__logo-text">MediaSPACE</span>
+        </a>
 
-
-    <main class="main">
-
-      <div class="container">
-        <div class="container__logo logo">
-            <img class="logo--img" src="../../static/img/stars.png" alt="">
-            <div class="logo__text">
-              MediaSPACE
-            </div>
-        </div>
-
-        <div class="container__body">
-          <div class="container__note">
-            Создание аккаунта
-          </div>
-          <form class="container--form BACK-END" method="post">
+        <div class="registration-page__container-form">
+          <h1 class="registration-page__title">Создание аккаунта</h1>
+          <form class="registration-page__form BACK-END" method="post">
             {% csrf_token %}
-            <input type="text" name="username" id="myInputName" onkeyup="checkInput()" placeholder="Логин">
-            <input type="text" name="password" id="myInputPassword" onkeyup="checkInput()" placeholder="Пароль">
-            <input type="email" name="email" id="myInputEmail" onkeyup="checkInput()" placeholder="Электронная почта">
-            <button class="container--button c-btn--1" type="submit" id="myButton" disabled>Создать новый аккаунт</button>
-            
-            <div class="line"></div>
-            <button class="container--button c-btn--2" type="submit" id="myButton" disabled>Войти в свой аккаунт</button>
+            <input
+              type="text"
+              name="username"
+              id="myInputName"
+              onkeyup="checkInput()"
+              placeholder="Логин"
+            />
+            <input
+              type="text"
+              name="password"
+              id="myInputPassword"
+              onkeyup="checkInput()"
+              placeholder="Пароль"
+            />
+            <input
+              type="email"
+              name="email"
+              id="myInputEmail"
+              onkeyup="checkInput()"
+              placeholder="Электронная почта"
+            />
+            <button
+              class="registration-page__form-button"
+              type="submit"
+              id="myButton"
+              disabled
+            >
+              Создать новый аккаунт
+            </button>
+
+            <div class="registration-page__line"></div>
+            <a
+              href=""
+              class=" c-btn--2 registration-page__link-login"
+              id="myButton"
+            >
+              <span>Войти в свой аккаунт</span>
+            </a>
           </form>
         </div>
-        
       </div>
+    </section>
 
-    </main>
-
-
-    <footer class="footer">
-      <!-- ___ -->
-    </footer>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- СОЗДАНИЕ АККАУНТА DJANGO
+    <!-- СОЗДАНИЕ АККАУНТА DJANGO
 <form method="post">
   {% csrf_token %}
   <input type="text" name="username" id="myInputName" onkeyup="checkInput()" placeholder="Username">
@@ -92,34 +89,32 @@
   <button type="submit" id="myButton" disabled>Register</button>
 </form>
 СОЗДАНИЕ АККАУНТА DJANGO -->
-  
 
-<!-- ВХОД В СУЩЕСТВУЮЩИЙ АККАУНТ DJANGO
+    <!-- ВХОД В СУЩЕСТВУЮЩИЙ АККАУНТ DJANGO
 <div class="register__links">
   Already have an account? <a href="{% url 'login' %}">Log in</a>
 </div>
 ВХОД В СУЩЕСТВУЮЩИЙ АККАУНТ DJANGO -->
 
+    <!-- ВАЛИДНОСТЬ РЕГИСТРАЦИИ -->
+    <script>
+      function checkInput() {
+        var input_name = document.getElementById('myInputName');
+        var input_password = document.getElementById('myInputPassword');
+        var input_email = document.getElementById('myInputEmail');
+        var button = document.getElementById('myButton');
 
-<!-- ВАЛИДНОСТЬ РЕГИСТРАЦИИ -->
-<script>
-  function checkInput() {
-    var input_name = document.getElementById('myInputName');
-    var input_password = document.getElementById('myInputPassword')
-    var input_email = document.getElementById('myInputEmail')
-    var button = document.getElementById('myButton');
-
-    if (input_name.value.length > 0 && input_password.value.length > 0 && input_email.value.length > 0) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  }
-</script>
-<!-- ВАЛИДНОСТЬ РЕГИСТРАЦИИ -->
-
-
-</body>
-
+        if (
+          input_name.value.length > 0 &&
+          input_password.value.length > 0 &&
+          input_email.value.length > 0
+        ) {
+          button.disabled = false;
+        } else {
+          button.disabled = true;
+        }
+      }
+    </script>
+    <!-- ВАЛИДНОСТЬ РЕГИСТРАЦИИ -->
+  </body>
 </html>
-

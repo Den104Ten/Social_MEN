@@ -1,4 +1,12 @@
-body {
-    background: #7bff48;
+.wrapper-header{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
+
+.header-form {
+  position: absolute;
+  left: 0;
+}

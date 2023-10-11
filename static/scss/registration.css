@@ -1,11 +1,11 @@
-@import "nullstyle.css";
+@import 'nullstyle.css';
 body {
   background-color: #161721;
   font-family: "Inter", sans-serif;
   color: #fff;
 }
 
-body .main .container {
+.registration-page__container {
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
@@ -13,82 +13,77 @@ body .main .container {
   justify-content: center;
   align-items: center;
 }
-body .main .container__sizing {
-  max-width: 530px;
-  min-height: 550px;
-  margin: 0px 20px;
-}
-body .main .container .logo {
+.registration-page__logo-link {
   font-family: "Montserrat", sans-serif;
   display: flex;
+  align-items: center;
+  color: #fff;
   margin: 0px 0px -5px 0px;
 }
-body .main .container .logo--img {
-  width: 90px;
-  height: 90px;
+.registration-page__logo-image {
+  max-width: 90px;
+  max-height: 90px;
 }
-body .main .container .logo__text {
+.registration-page__logo-text {
   font-size: 54.5px;
   font-weight: 500;
   margin: 12px 0px 0px 0px;
 }
-body .main .container__body {
+.registration-page__container-form {
   border: 3px solid #fff;
   border-radius: 15px;
   padding: 40px;
   box-shadow: -2px -2px 100px 100px rgba(124, 124, 124, 0.2);
 }
-body .main .container__note {
+.registration-page__title {
   text-align: center;
-  margin-bottom: 17px;
   font-size: 20px;
 }
-body .main .container--form {
+.registration-page__form {
   display: flex;
+  margin-top: 17px;
   flex-direction: column;
+  row-gap: 20px;
 }
-body .main .container--form input {
+.registration-page__form input {
   min-width: 440px;
   min-height: 60px;
   border-radius: 15px;
   font-size: 16px;
   padding: 0px 0px 0px 20px;
 }
-body .main .container--form input:not(:last-child) {
-  margin-bottom: 20px;
-}
-body .main .container .line {
+.registration-page__line {
   max-width: 420px;
   height: 2px;
   margin: 0px 0px 0px 12px;
   border-radius: 10px;
   background-color: #fff;
 }
-body .main .container .c-btn--1 {
-  min-width: 440px;
-  min-height: 60px;
+.registration-page__form-button {
+  padding-top: 18px;
+  padding-bottom: 18px;
   border-radius: 15px;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
-  margin-bottom: 15px;
   background-color: #fff;
   transition: all 0.5s ease-out;
 }
-body .main .container .c-btn--1:hover {
+.registration-page__form-button:hover {
   background-color: #b4bfca;
   transition: all 0.5s ease-out;
 }
-body .main .container .c-btn--2 {
-  min-width: 440px;
-  min-height: 60px;
+.registration-page__link-login {
+  display: block;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  text-align: center;
   border-radius: 15px;
   background-color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
-  margin-top: 15px;
   transition: all 0.5s ease-out;
 }
-body .main .container .c-btn--2:hover {
+.registration-page__link-login:hover {
   background-color: #b4bfca;
   transition: all 0.5s ease-out;
 }/*# sourceMappingURL=registration.css.map */
