@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Full post</title>
+</head>
+<body>
+
+    <div>
+        <h2>{{ post.title }}</h2>  <!-- Название поста -->
+        <a>{{ post.body| linebreaks }}</a>  <!-- Тело поста -->
+    </div>
+
+</body>
+</html>

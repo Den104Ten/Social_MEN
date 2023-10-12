@@ -102,7 +102,33 @@ class CheckResetPassword(View):
         else:
             return redirect('login')
 
+
+
+
+
+# --- Далее все что связано со страничкой Home ----------------------------------------------------------------------- #
+
 class HomeView(View):
+
+    def get(self, request):
+        posts = Post.objects.all()
+        # Передаю все посты шаблону главной страницы
+        return render(request, 'main_app/home.html', context={'posts': posts})
+
+
+class FullPostView(View):
+
+    def get(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        return render(request, 'main_app/full_post_view.html', {'post': post})
+
+
+
+
+
+# -----------------------------------------Часть функционала для будущего--------------------------------------------- #
+
+"""class HomeView(View):
     def get(self, request):
         posts = Post.objects.all()
 
@@ -127,5 +153,5 @@ class CreatePost(View):
 class FullPost(View):
     def get(self, request, pk):
         post = get_object_or_404(Post, pk=pk)
-        return render(request, 'main_app/full_post.html', {'post': post})
+        return render(request, 'main_app/full_post.html', {'post': post})"""
 
