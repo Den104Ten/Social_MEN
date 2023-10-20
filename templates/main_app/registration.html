@@ -62,13 +62,12 @@
               class="registration-page__form-button"
               type="submit"
               id="myButton"
-              disabled
             >
               Создать новый аккаунт
             </button>
 
             <div class="registration-page__line"></div>
-            <a href="" class="registration-page__link-login" id="myButton">
+            <a href="{% url 'login' %}" class="registration-page__link-login" id="myButton">
               <span>Войти в свой аккаунт</span>
             </a>
           </form>

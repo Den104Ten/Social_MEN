@@ -60,13 +60,12 @@
             class="login-page__button-form"
             type="submit"
             id="myButton"
-            disabled
           >
             Войти
           </button>
           <a class="login-page__password-recovery" href="/"> Забыли пароль? </a>
           <div class="login-page__form-line"></div>
-          <a class="login-page__button-form" href="">Создать новый аккаунт</a>
+          <a class="login-page__button-form" href="{% url 'register' %}">Создать новый аккаунт</a>
         </form>
       </div>
     </section>

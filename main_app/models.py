@@ -12,6 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now())  # Время публикации поста
+    is_published = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['-publish']

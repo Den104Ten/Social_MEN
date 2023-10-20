@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <!-- Пример!!! -->
-    <!-- Так должно выглядеть подключение статических файлов: href="{% static 'scss/login.css' %}" -->
-</head>
-<body>
+{% extends 'main_app/base.html' %}
 
+    {% block content %}
     <div>
         {% for post in posts %}
             <p>
@@ -16,9 +8,10 @@
                 <a>{{ post.body| truncatewords:50 }}</a>  <!-- Тело поста и обрезание до 50 слов -->
                 <!-- Ссылка чтобы смотреть пость польностью -->
                 <a href="{% url 'full_post' pk=post.pk %}">Смотреть пост полностью</a>
+                {% if not forloop.last %}
+                <hr>
+                {% endif %}
             </p>
         {% endfor %}
     </div>
-
-</body>
-</html>
+    {% endblock %}

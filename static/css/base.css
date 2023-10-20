@@ -1,0 +1,19 @@
+.topbar {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+
+.topbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.topbar-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+

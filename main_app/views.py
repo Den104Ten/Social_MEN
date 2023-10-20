@@ -1,9 +1,20 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth import authenticate, login
 from django.views import View
 from .models import User, Post
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.core.mail import send_mail
+
+
+# ---- Обработка неверного маршрута ---------------------------------------------------------------------------------- #
+
+def page_not_found(request, exception):
+    """Функция перенаправляет на страницу с информацией, что нет такого маршрута. Если отладка выключена."""
+    return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+
+# --^-- Обработка неверного маршрута ----------^--------------------------------------^-------------------------^----- #
+
 
 class RegistrationView(View):
     universal_text = 'Страница регистрации'
@@ -111,7 +122,7 @@ class CheckResetPassword(View):
 class HomeView(View):
 
     def get(self, request):
-        posts = Post.objects.all()
+        posts = Post.objects.filter(is_published=True)
         # Передаю все посты шаблону главной страницы
         return render(request, 'main_app/home.html', context={'posts': posts})
 
