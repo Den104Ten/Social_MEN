@@ -1,5 +1,5 @@
 // IMPORT //
-@import 'nullstyle.css';
+@import '../../global/nullstyle.scss';
 
 // BODY //
 body {
@@ -107,5 +107,11 @@ body {
     margin: 0px 0px 0px 12px;
     border-radius: 10px;
     background-color: #fff;
+  }
+
+  .error {
+    &::placeholder{
+      color: red;
+    }
   }
 }

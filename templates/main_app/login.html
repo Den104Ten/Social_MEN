@@ -7,7 +7,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'scss/login.css' %}"
+      href="{% static 'styles/pages/login/login.css' %}"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,7 +59,14 @@
           <button
             class="login-page__button-form"
             type="submit"
+<<<<<<< HEAD
             id="myButton"
+=======
+         
+            {% comment %} id="myButton " {% endcomment %}
+          
+            id="button-login"
+>>>>>>> origin/anatoli
           >
             Войти
           </button>
@@ -99,5 +106,24 @@
       }
     </script>
     <script defer src="../../static/js/presetsJS/t-b+adaptive--pres__[JS].js"></script> -->
+    <script>
+      const buttonLogin = document.getElementById('button-login');
+      const userPassword = document.getElementById('myInputPassword');
+      const userName = document.getElementById('myInputUsername');
+      console.log(buttonLogin);
+      buttonLogin.addEventListener('click', function () {
+        if (userPassword.value == 0) {
+          userPassword.classList.add('error');
+          userPassword.placeholder = 'Обязательно к выполнению!';
+        }
+        if (userName.value == 0) {
+          userName.classList.add('error');
+          userName.placeholder = 'Обязательно к выполнению!';
+        }
+      });
+    </script>
   </body>
+  {% comment %}
+  <script src="../../static/js/login/login.js" />
+  {% endcomment %}
 </html>
